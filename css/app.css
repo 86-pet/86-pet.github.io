@@ -50,7 +50,7 @@ custom-colors, box-mode, custom-header, custom-menu, custom-logo, featured-image
 /**
  * Setup box-sizing
  */
-html {
+ html {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
   html.boxed {
@@ -5184,7 +5184,7 @@ input::-ms-clear {
       .is-grid-active .product-m__category > a:hover {
         color: #12c0a7; }
   .is-grid-active .product-m__name > a {
-    color: #fff;
+    color: #28a07f;
     font-size: 14px;
     font-weight: 600;
     transition: color 0.5s; }
@@ -5192,7 +5192,7 @@ input::-ms-clear {
       color: #12c0a7; }
   .is-grid-active .product-m__price {
     line-height: 1.2;
-    color: #fff;
+    color: #cc751a;
     font-size: 14px;
     font-weight: 600; }
   .is-grid-active .product-m__discount {
@@ -5322,7 +5322,7 @@ input::-ms-clear {
   .is-list-active .product-m__price {
     margin-bottom: 8px;
     line-height: 1.2;
-    color: #fff;
+    color: #cc751a;
     font-size: 14px;
     font-weight: 600; }
   .is-list-active .product-m__discount {
