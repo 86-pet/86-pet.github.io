@@ -780,15 +780,15 @@ body {
     background-color: #ff003b;
     color: #ffffff; }
 
-.btn--e-brand-shadow {
-  border: 1px solid #ff003b;
-  box-shadow: 1px 2px 8px 0 rgba(36, 37, 38, 0.08);
-  background-color: #ff003b;
-  color: #ffffff;
-  transition: background-color .3s linear, border-color .3s linear; }
-  .btn--e-brand-shadow:hover {
-    border-color: #fa003a;
-    background-color: #fa003a; }
+    .btn--e-brand-shadow {
+      border: 1px solid #003bff;
+      box-shadow: 1px 2px 8px 0 rgba(36, 37, 38, 0.08);
+      background-color: #003bff;
+      color: #ffffff;
+      transition: background-color .3s linear, border-color .3s linear; }
+      .btn--e-brand-shadow:hover {
+        border-color: #003afa;
+        background-color: #003afa; }
 
 /* Countdown Component */
 .countdown--style-special {
@@ -5085,7 +5085,7 @@ input::-ms-clear {
   font-size: 14px;
   margin-bottom: 6px;
   font-weight: 700;
-  color: #fff; }
+  color: #2d4059; }
 
 .shop-p__meta-text-2 {
   font-size: 14px;
@@ -5114,7 +5114,7 @@ input::-ms-clear {
     font-size: 13px;
     padding: 8px 18px;
     font-weight: 700;
-    color: #fff; }
+    color: #7f7f7f; }
     .tool-style__group span:hover {
       background-color: rgba(255, 0, 59, 0.12);
       color: #ff003b;
