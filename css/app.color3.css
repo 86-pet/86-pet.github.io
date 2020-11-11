@@ -137,7 +137,7 @@ Box Module
 /* Body Element */
 @media (min-width: 576px) {
   html.boxed body {
-    background-color: #ffffff;
+    background-color: #12c0a7ba;
     margin: 0 auto; } }
 
 @media (min-width: 576px) {
@@ -610,7 +610,7 @@ body {
   color: #003bff !important; }
 
 .u-c-secondary {
-  color: #333333 !important; }
+  color: #1c3352 !important; }
 
 .u-c-white {
   color: #ffffff !important; }
@@ -2040,7 +2040,7 @@ input::-ms-clear {
 /* 7.1 Outer-Footer */
 .outer-footer {
   padding: 80px 0;
-  background-color: #12c0a7; }
+  background-color: #344965; }
   .outer-footer__content-title {
     display: block;
     color: #ffffff;
@@ -2122,7 +2122,7 @@ input::-ms-clear {
 
 /* 7.3 Lower-Footer */
 .lower-footer {
-  background-color: #12c0a7;
+  background-color: #2d4059;
   padding: 20px 0; }
   .lower-footer__content {
     display: -ms-flexbox;
@@ -2707,7 +2707,7 @@ input::-ms-clear {
     .testimonial__block-quote p {
       font-size: 14px;
       font-weight: 600;
-      color: #fff; }
+      color: #2d4059; }
   .testimonial__author {
     display: block;
     font-size: 13px;
@@ -4860,7 +4860,7 @@ input::-ms-clear {
   font-size: 14px;
   padding: 14px 18px;
   border-bottom: 1px solid #efefef;
-  color: #fff;
+  color: #2d4059;
   font-weight: 700;
   line-height: 20px; }
 
@@ -4947,7 +4947,7 @@ input::-ms-clear {
     padding: 4px 14px; }
     .shop-w__category-list > li > a {
       font-size: 14px;
-      color: #fff;
+      color: #2d4059;
       transition: color 110ms ease-in-out; }
       .shop-w__category-list > li > a:hover {
         color: #003bff; }
@@ -4960,7 +4960,7 @@ input::-ms-clear {
       padding-left: 8px; }
       .shop-w__category-list > li ul li a {
         font-size: 13px;
-        color: #7f7f7f;
+        color: #394f6b;
         transition: color 110ms ease-in-out; }
         .shop-w__category-list > li ul li a:hover {
           color: #003bff; }
@@ -5544,7 +5544,7 @@ input::-ms-clear {
   .has-dropdown > ul > li > a {
     display: block;
     padding: 8px 20px;
-    color: #fff;
+    color: #2d4059;
     font-size: 12px;
     font-weight: 600; }
 
@@ -5892,7 +5892,7 @@ input::-ms-clear {
   .mini-product__name {
     display: block; }
     .mini-product__name > a {
-      color: #fff;
+      color: #2d4059;
       font-size: 14px;
       font-weight: 600;
       transition: color 0.5s; }
@@ -6367,7 +6367,7 @@ input::-ms-clear {
   line-height: 50px;
   box-shadow: 2px 2px 4px 4px rgba(36, 37, 38, 0.08);
   background-color: #ffffff;
-  color: #fff;
+  color: #2d4059;
   font-size: 18px;
   text-align: center; }
 
