@@ -21,6 +21,7 @@
 
     <!--====== App ======-->
     <link rel="stylesheet" href="css/app.css">
+    <script src="js/homePage.js"></script>
 </head>
 
 <body class="config">
@@ -220,9 +221,15 @@
 
                                                 <span class="js-menu-toggle"></span>
                                                 <ul style="width:118px">
-                                                    <li><a href="index.html">Home </a></li>
-                                                    <li><a href="index.html">Service home </a></li>
-                                                    <li><a href="index.html">Shopping home</a></li>
+                                                    <li>
+
+                                                        <a href="index.html">Home 1</a></li>
+                                                    <li>
+
+                                                        <a href="index-2.html">Home 2</a></li>
+                                                    <li>
+
+                                                        <a href="index-3.html">Home 3</a></li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -849,7 +856,7 @@
 
                                                             <button
                                                                 class="btn btn--icon fas fa-angle-right btn--e-transparent-platinum-b-2"
-                                                                type="submit"></button></div>
+                                                                onclick="getListItem()" type="submit"></button></div>
                                                     </div>
                                                 </form>
                                             </div>
@@ -868,11 +875,12 @@
 
                                             <span>Related Searches:</span>
 
-                                            <a class="gl-tag btn--e-brand-shadow" href="#">dog's clothing</a>
+                                            <a class="gl-tag btn--e-brand-shadow" href="#">men's clothing</a>
 
-                                            <a class="gl-tag btn--e-brand-shadow" href="#">bed for cat </a>
+                                            <a class="gl-tag btn--e-brand-shadow" href="#">mobiles & tablets</a>
 
-                                            <a class="gl-tag btn--e-brand-shadow" href="#">pet's food</a></div>
+                                            <a class="gl-tag btn--e-brand-shadow" href="#">books & audible</a>
+                                        </div>
                                     </div>
                                     <div class="shop-p__tool-style">
                                         <div class="tool-style__group u-s-m-b-8">
@@ -882,21 +890,20 @@
                                             <span class="js-shop-list-target">List</span></div>
                                         <form>
                                             <div class="tool-style__form-wrap">
-                                                <div class="u-s-m-b-8"><select
+                                                <div class="u-s-m-b-8"><select onchange="getListItem()"
+                                                        id="select-limit-item"
                                                         class="select-box select-box--transparent-b-2">
-                                                        <option>Show: 8</option>
-                                                        <option selected>Show: 12</option>
-                                                        <option>Show: 16</option>
-                                                        <option>Show: 28</option>
+                                                        <option value="10">Show: 10</option>
+                                                        <option selected value="20">Show: 20</option>
+                                                        <option value="30">Show: 30</option>
+                                                        <option value="40">Show: 40</option>
                                                     </select></div>
-                                                <div class="u-s-m-b-8"><select
+                                                <div class="u-s-m-b-8"><select onchange="getListItem()"
+                                                        id="select-sort-item"
                                                         class="select-box select-box--transparent-b-2">
-                                                        <option selected>Sort By: Newest Items</option>
-                                                        <option>Sort By: Latest Items</option>
-                                                        <option>Sort By: Best Selling</option>
-                                                        <option>Sort By: Best Rating</option>
-                                                        <option>Sort By: Lowest Price</option>
-                                                        <option>Sort By: Highest Price</option>
+                                                        <option selected value="rating">Sort By: Best Rating</option>
+                                                        <option value="lowPrice">Sort By: Lowest Price</option>
+                                                        <option value="highPrice">Sort By: Highest Price</option>
                                                     </select></div>
                                             </div>
                                         </form>
@@ -904,102 +911,23 @@
                                 </div>
                                 <div class="shop-p__collection">
                                     <div class="row is-grid-active">
-                                        <div id="row1" class="row">
-                                            <script>
-                                                getCategories('./data/example.json');
-                                                function getCategories(file) {
-                                                    var rawFile = new XMLHttpRequest();
-                                                    rawFile.open("GET", file, false);
-                                                    // rawFile.responseType = 'json';
-                                                    rawFile.onreadystatechange = function () {
-                                                        if (rawFile.readyState === 4) {
-                                                            if (rawFile.status === 200) {
-                                                                const result = rawFile.response;
-                                                                let html = '';
-                                                                const component =
-                                                                    `<div class="col-lg-4 col-md-6 col-sm-6">
-                                                                        <div class="product-m">
-                                                                            <div class="product-m__thumb">
-
-                                                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                                                    <img class="aspect__img" src={{image}} alt=""></a>
-                                                                                <div class="product-m__quick-look">
-
-                                                                                    <a class="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick Look"></a></div>
-                                                                                <div class="product-m__add-cart">
-
-                                                                                    <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Add to Cart</a></div>
-                                                                            </div>
-                                                                            <div class="product-m__content">
-                                                                                <div class="product-m__category">
-
-                                                                                    <a href="shop-side-version-2.html">{{categories_name}}</a></div>
-                                                                                <div class="product-m__name">
-
-                                                                                    <a href="product-detail.html">{{products_name}}</a></div>
-                                                                                <div class="product-m__rating gl-rating-style">{{star}}
-
-                                                                                    <span class="product-m__review">({{countReviewer}})</span></div>
-                                                                                <div class="product-m__price">{{products_price}}</div>
-                                                                                <div class="product-m__hover">
-                                                                                    <div class="product-m__preview-description">
-
-                                                                                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
-                                                                                    <div class="product-m__wishlist">
-
-                                                                                        <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>`;
-
-                                                                const jsonResult = JSON.parse(result);
-                                                                const star = '<i class="fas fa-star"></i>';
-                                                                const start0 = '<i class="far fa-star"></i>';
-                                                                for (let i= 0; i < 100; i++) {
-                                                                    let resStart = '';
-                                                                    for (let index = 0; index < 5; index++) {
-                                                                        resStart += index < jsonResult[i].list_type ? star : start0;
-                                                                    }
-                                                                    html += component
-                                                                        .replace('{{image}}', jsonResult[i].image_url)
-                                                                        .replace('{{star}}', resStart)
-                                                                        .replace('{{countReviewer}}', Math.floor(jsonResult[i].final_price))
-                                                                        .replace('{{products_name}}', jsonResult[i].products_name)
-                                                                        .replace('{{products_price}}', "$"+ jsonResult[i].products_price)
-                                                                        .replace('{{categories_name}}', jsonResult[i].categories_name)
-                                                                }
-
-                                                                document.getElementById("row1").innerHTML = html;
-                                                            }
-                                                        }
-                                                    }
-                                                    rawFile.send(null);
-                                                }
-                                            </script>
+                                        <div id="get-list-item" class="row">
+                                            <!-- <script>
+                                                getListItem();
+                                            </script> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="u-s-p-y-60">
 
                                     <!--====== Pagination ======-->
-                                    <ul class="shop-p__pagination">
-                                        <li class="is-active">
-
-                                            <a href="shop-side-version-2.html">1</a></li>
-                                        <li>
-
-                                            <a href="shop-side-version-2.html">2</a></li>
-                                        <li>
-
-                                            <a href="shop-side-version-2.html">3</a></li>
-                                        <li>
-
-                                            <a href="shop-side-version-2.html">4</a></li>
-                                        <li>
-
-                                            <a class="fas fa-angle-right" href="shop-side-version-2.html"></a></li>
+                                    <ul id="pagination-list-item" class="shop-p__pagination">
+                                        <div id="listingTable"></div>
+                                        <a class="gl-tag btn--e-brand-shadow" href="javascript:prevPage()"
+                                            id="btn_prev">&laquo; Previous Page</a>
+                                        <a class="gl-tag btn--e-brand-shadow" href="javascript:nextPage()"
+                                            id="btn_next">Next Page &raquo;</a>
+                                        page: <span id="page" class="product-m__name"></span>
                                     </ul>
                                     <!--====== End - Pagination ======-->
                                 </div>
@@ -1407,9 +1335,10 @@
         ga.q = [];
         ga.l = +new Date;
         ga('create', 'UA-XXXXX-Y', 'auto');
-        ga('send', 'pageview')
+        ga('send', 'pageview');
+        getListItem();
     </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
 
     <!--====== Vendor Js ======-->
     <script src="js/vendor.js"></script>
