@@ -2040,7 +2040,7 @@ input::-ms-clear {
 /* 7.1 Outer-Footer */
 .outer-footer {
   padding: 80px 0;
-  background-color: #000000; }
+  background-color: #2c3d5b; }
   .outer-footer__content-title {
     display: block;
     color: #ffffff;
@@ -2122,7 +2122,7 @@ input::-ms-clear {
 
 /* 7.3 Lower-Footer */
 .lower-footer {
-  background-color: #000000;
+  background-color: #2d4059;
   padding: 20px 0; }
   .lower-footer__content {
     display: -ms-flexbox;
@@ -2141,10 +2141,10 @@ input::-ms-clear {
   .lower-footer__copyright a {
     margin: 0 1px;
     font-size: 13px;
-    color: #1cb728;
+    color: #12c0a7;
     transition: color 0.6s; }
     .lower-footer__copyright a:hover {
-      color: #1cb728; }
+      color: #12c0a7; }
   .lower-footer__img img {
     display: block; }
   .lower-footer__payment ul {
