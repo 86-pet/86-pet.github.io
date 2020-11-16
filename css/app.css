@@ -67,7 +67,8 @@ custom-colors, box-mode, custom-header, custom-menu, custom-logo, featured-image
 body {
   line-height: 1.5;
   font-size: 1rem;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+}
 
 .config {
   overflow: hidden; }
