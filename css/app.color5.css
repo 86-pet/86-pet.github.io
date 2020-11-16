@@ -5653,7 +5653,7 @@ input::-ms-clear {
   .ah-close {
     display: none; }
   .ah-list > li > a:hover {
-    color: #c500ff; }
+    color: #00b39d; }
   .has-dropdown > ul > li:hover {
     background-color: #fbfbfb; }
   .has-dropdown:hover > ul {
@@ -5828,7 +5828,7 @@ input::-ms-clear {
   border-radius: 50%;
   text-align: center;
   font-size: 11px;
-  background-color: #c500ff;
+  background-color: #00b39d;
   color: #ffffff; }
 
 .mini-cart {
@@ -6078,7 +6078,7 @@ input::-ms-clear {
   .owl-carousel.primary-style-1 button.owl-dot:last-child {
     margin-bottom: 0; }
   .owl-carousel.primary-style-1 button.owl-dot.active, .owl-carousel.primary-style-1 button.owl-dot:hover {
-    background: transparent linear-gradient(-180deg, #c500ff 0%, #d133ff 100%); }
+    background: transparent linear-gradient(-180deg, #0bc9a8 0%, #2c3d5b 100%); }
 
 .owl-carousel.primary-style-2 .owl-dots {
   width: 100%;

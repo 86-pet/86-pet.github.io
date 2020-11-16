@@ -608,7 +608,7 @@ body {
  * Includes support for styling links too.
  */
 .u-c-brand {
-  color: #1cb728 !important; }
+  color: #00b39d !important; }
 
 .u-c-secondary {
   color: #333333 !important; }
@@ -697,15 +697,15 @@ body {
 .btn--e-brand {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #1cb728;
+  background-color: #0cc5ac;
   transition: background-color .5s ease-in; }
   .btn--e-brand:hover {
-    background-color: #146441; }
+    background-color: #005a4e; }
 
 .btn--e-brand-b-2 {
   color: #ffffff;
-  background-color: #1cb728;
-  border: 2px solid #1cb728;
+  background-color: #0cc5ac;
+  border: 2px solid #005a4e;
   transition: background-color 0.5s ease-in, border-color 0.5s ease-in; }
   .btn--e-brand-b-2:hover {
     background-color: #146441;
@@ -5654,7 +5654,7 @@ input::-ms-clear {
   .ah-close {
     display: none; }
   .ah-list > li > a:hover {
-    color: #1cb728; }
+    color: #00b39d; }
   .has-dropdown > ul > li:hover {
     background-color: #fbfbfb; }
   .has-dropdown:hover > ul {
@@ -6079,7 +6079,7 @@ input::-ms-clear {
   .owl-carousel.primary-style-1 button.owl-dot:last-child {
     margin-bottom: 0; }
   .owl-carousel.primary-style-1 button.owl-dot.active, .owl-carousel.primary-style-1 button.owl-dot:hover {
-    background: transparent linear-gradient(-180deg, #1cb728 0%, #1e9260 100%); }
+    background: transparent linear-gradient(-180deg, #0bc9a8 0%, #2c3d5b 100%); }
 
 .owl-carousel.primary-style-2 .owl-dots {
   width: 100%;
