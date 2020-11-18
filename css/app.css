@@ -784,7 +784,7 @@ body {
 .btn--e-brand-shadow {
   border: 1px solid #1cb728;
   box-shadow: 1px 2px 8px 0 rgba(36, 37, 38, 0.08);
-  background-color:  #0ac5a8
+  background-color:  #0ac5a8;
   color: #ffffff;
   transition: background-color .3s linear, border-color .3s linear; }
   .btn--e-brand-shadow:hover {
@@ -4275,11 +4275,11 @@ input::-ms-clear {
       color: #333333; }
 
 .blog-pg > li > a:hover {
-  background-color:  #0ac5a8
+  background-color:  #0ac5a8;
   color: #ffffff; }
 
 .blog-pg > li.blog-pg--active > a {
-  background-color:  #0ac5a8
+  background-color:  #0ac5a8;
   color: #ffffff;
   border-color:  #0ac5a8 }
 
