@@ -144,3 +144,77 @@ function nextPage() {
   current_page++;
   getListItem(current_page);
 }
+
+
+function randomShowItems() {
+  let component = `<div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                      <div class="product-o__wrap">
+
+                          <a class="aspect aspect--bg-grey aspect--square u-d-block"
+                              href="product-detail.html">
+
+                              <img class="aspect__img" src="{{image}}"
+                                  alt="">
+                          </a>
+                      </div>
+
+                      <span class="product-o__category">
+
+                          <a href="shop-side-version-2.html">{{categories_name}}</a></span>
+
+                      <span class="product-o__name">
+
+                          <a href="product-detail.html">{{products_name}}</a></span>
+                      <div class="product-o__rating gl-rating-style">
+                             {{star}}
+
+                          <span class="product-o__review">(0)</span></div>
+
+                      <span class="product-o__price">{{final_price}}
+
+                          <span class="product-o__discount">{{pre_price}}</span></span>
+                    </div>
+                  </div>`;
+
+  const file = './data/example.json';
+  let rawFile = new XMLHttpRequest();
+  rawFile.open("GET", file, false);
+  rawFile.onreadystatechange = function () {
+
+    if (rawFile.status === 200) {
+      let newItems = [];
+      let html = '';
+      const star = '<i class="fas fa-star"></i>';
+      const start0 = '<i class="far fa-star"></i>';
+      const response = rawFile.response;
+
+      let listItem = JSON.parse(response);
+      for (let i = 0; i < 10; i++) {
+        let idx = Math.floor(Math.random() * listItem.length);
+        newItems.push(listItem[idx]);
+        listItem.splice(idx, 1);
+      }
+      for (let i = 0; i < newItems.length; i++) {
+        let resStart = '';
+        for (let index = 0; index < 5; index++) {
+          resStart += index < listItem[i].rate ? star : start0;
+        }
+        let priceOld = '' + (newItems[i].final_price + Math.floor(Math.random() * newItems.length * 2));
+        let productName = listItem[i].products_name.substr(0, 50) + '...';
+        html += component
+          .replace('{{image}}', newItems[i].image_url)
+          .replace('{{star}}', resStart)
+          .replace('{{products_name}}', productName)
+          .replace('{{final_price}}', "$" + newItems[i].final_price)
+          .replace('{{categories_name}}', listItem[i].categories_name)
+          .replace('{{pre_price}}', "$" + priceOld.fixed(2))
+
+      }
+      document.getElementById("show-random-item").innerHTML = html;
+      return html;
+    }
+  }
+  rawFile.send(null);
+}
+
