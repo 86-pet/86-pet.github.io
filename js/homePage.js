@@ -6,7 +6,7 @@ const component =
     <div class="product-m">
       <div class="product-m__thumb">
 
-        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail-variable.html">
 
           <img class="aspect__img" src={{image}} alt=""></a>
         <div class="product-m__quick-look">
@@ -23,7 +23,7 @@ const component =
           <a href="shop-side-version-2.html">{{categories_name}}</a></div>
         <div class="product-m__name">
 
-          <a href="product-detail.html">{{products_name}}</a></div>
+          <a href="product-detail-variable.html?id={{id}}">{{products_name}}</a></div>
         <div class="product-m__rating gl-rating-style">{{star}}
 
           <span class="product-m__review">({{countReviewer}})</span></div>
@@ -47,21 +47,21 @@ const pagination =
 
 function getListItem(page) {
 
-  let filter        = {};
-  const file        = './data/example.json';
+  let filter = {};
+  const file = './data/example.json';
 
-  const limit       = document.getElementById("select-limit-item").value || 20;
-  const sortBy      = document.getElementById("select-sort-item").value;
+  const limit = document.getElementById("select-limit-item").value || 20;
+  const sortBy = document.getElementById("select-sort-item").value;
 
-  const priceMin    = document.getElementById("price-min").value;
-  const priceMax    = document.getElementById("price-max").value;
+  const priceMin = document.getElementById("price-min").value;
+  const priceMax = document.getElementById("price-max").value;
 
-  var btn_next      = document.getElementById("btn_next");
-  var btn_prev      = document.getElementById("btn_prev");
+  var btn_next = document.getElementById("btn_next");
+  var btn_prev = document.getElementById("btn_prev");
   var listing_table = document.getElementById("listingTable");
-  var page_span     = document.getElementById("page");
+  var page_span = document.getElementById("page");
 
-  let currentPage   = +page || 1;
+  let currentPage = +page || 1;
   if (limit) { filter.limit = limit };
   if (sortBy) { filter.sortBy = sortBy };
 
@@ -129,6 +129,7 @@ function renderByQuery(listItem) {
       .replace('{{final_price}}', "$" + listItem[i].final_price)
       .replace('{{categories_name}}', listItem[i].categories_name)
       .replace('{{description}}', description)
+      .replace('{{id}}', listItem[i].products_model)
   }
   return html;
 }
@@ -152,7 +153,7 @@ function randomShowItems() {
                       <div class="product-o__wrap">
 
                           <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                              href="product-detail.html">
+                              href="product-detail-variable.html?id={{id}}">
 
                               <img class="aspect__img" src="{{image}}"
                                   alt="">
@@ -165,7 +166,7 @@ function randomShowItems() {
 
                       <span class="product-o__name">
 
-                          <a href="product-detail.html">{{products_name}}</a></span>
+                          <a href="product-detail-variable.html?id={{id_1}}">{{products_name}}</a></span>
                       <div class="product-o__rating gl-rating-style">
                              {{star}}
 
@@ -209,7 +210,8 @@ function randomShowItems() {
           .replace('{{final_price}}', "$" + newItems[i].final_price)
           .replace('{{categories_name}}', listItem[i].categories_name)
           .replace('{{pre_price}}', "$" + priceOld.fixed(2))
-
+          .replace('{{id}}', newItems[i].products_model)
+          .replace('{{id_1}}', newItems[i].products_model)
       }
       document.getElementById("show-random-item").innerHTML = html;
       return html;
