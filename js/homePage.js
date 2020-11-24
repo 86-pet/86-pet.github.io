@@ -6,7 +6,7 @@ const component =
     <div class="product-m">
       <div class="product-m__thumb">
 
-        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail-variable.html">
+        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail-variable.html?id={{id_1}}">
 
           <img class="aspect__img" src={{image}} alt=""></a>
         <div class="product-m__quick-look">
@@ -130,6 +130,7 @@ function renderByQuery(listItem) {
       .replace('{{categories_name}}', listItem[i].categories_name)
       .replace('{{description}}', description)
       .replace('{{id}}', listItem[i].products_model)
+      .replace('{{id_1}}', listItem[i].products_model)
   }
   return html;
 }
