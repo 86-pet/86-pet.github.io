@@ -95,6 +95,9 @@ function loadCart() {
                   </i>
                   <span class="total-item-round">{{cart}}</span>`;
   let cart = JSON.parse(localStorage.getItem('cart')) || [0];
+  if (cart && cart.length == 0) {
+    cart.push(0);
+  }
   const cartItem = cart.map(item => +item.quantity).reduce((a, b) => a + b);
   let htmlCart = addCart.replace('{{cart}}', cartItem || 0);
   document.getElementById('cart-item').innerHTML = htmlCart;
@@ -139,7 +142,7 @@ function cardMiniProduct() {
   let htmlPrice = '';
   const cart = JSON.parse(localStorage.getItem('cart'));
 
-  if(!cart || !cart.length) {
+  if (!cart || !cart.length) {
     document.getElementById('card-mini-product-id').innerHTML = html;
     document.getElementById('cart-total-price-id').innerHTML = htmlPrice;
     return;
@@ -163,9 +166,11 @@ function cardMiniProduct() {
 }
 
 function removeItems(id) {
+  console.log(id);
   let cart = JSON.parse(localStorage.getItem('cart'));
   const result = cart.filter(item => item.products_model != id);
   localStorage.setItem('cart', JSON.stringify(result));
+  loadCart();
   cardMiniProduct();
- // window.location.reload();
+  // window.location.reload();
 }

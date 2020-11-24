@@ -80,7 +80,7 @@ function changeQuantity(value, id) {
     }
   }
   localStorage.setItem('cart', JSON.stringify(cart));
-  cartDetail();
+  loadCart();
   window.location.reload();
 }
 
@@ -88,10 +88,10 @@ function removeItems(id) {
   let cart = JSON.parse(localStorage.getItem('cart'));
   const result = cart.filter(item => item.products_model != id);
   localStorage.setItem('cart', JSON.stringify(result));
-  cartDetail();
+  loadCart();
 }
 
 function removeAllItem() {
   localStorage.removeItem('cart');
-  cartDetail();
+  loadCart();
 }
