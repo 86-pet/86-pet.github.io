@@ -39,10 +39,10 @@ function loadComponent(property) {
   rawFile.send(null);
 }
 
-function addTocart() {
+function addTocart(idx) {
   const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  let valueInput = document.getElementById("add-cart-item").value;
+  const id = idx || urlParams.get('id');
+  let valueInput = idx ? 1 : document.getElementById("add-cart-item").value;
   const currentCart = `<span class="total-item-round">{{current_cart}}</span></a>`;
   const file = './data/example.json';
   let rawFile = new XMLHttpRequest();
@@ -88,20 +88,6 @@ function mappingData(data) {
     image: data.image_url,
     categories_name: data.categories_name
   }
-}
-
-function loadCart() {
-  let addCart = `<i class="fas fa-shopping-bag">
-                  </i>
-                  <span class="total-item-round">{{cart}}</span>`;
-  let cart = JSON.parse(localStorage.getItem('cart')) || [0];
-  if (cart && cart.length == 0) {
-    cart.push(0);
-  }
-  const cartItem = cart.map(item => +item.quantity).reduce((a, b) => a + b);
-  let htmlCart = addCart.replace('{{cart}}', cartItem || 0);
-  document.getElementById('cart-item').innerHTML = htmlCart;
-  cardMiniProduct();
 }
 
 function cardMiniProduct() {
@@ -166,11 +152,24 @@ function cardMiniProduct() {
 }
 
 function removeItems(id) {
-  console.log(id);
   let cart = JSON.parse(localStorage.getItem('cart'));
   const result = cart.filter(item => item.products_model != id);
   localStorage.setItem('cart', JSON.stringify(result));
   loadCart();
   cardMiniProduct();
-  // window.location.reload();
+  //window.location.reload();
+}
+
+function loadCart() {
+  let addCart = `<i class="fas fa-shopping-bag">
+                  </i>
+                  <span class="total-item-round">{{cart}}</span>`;
+  let cart = JSON.parse(localStorage.getItem('cart')) || [0];
+  if (cart && cart.length == 0) {
+    cart.push(0);
+  }
+  const cartItem = cart.map(item => +item.quantity).reduce((a, b) => a + b);
+  let htmlCart = addCart.replace('{{cart}}', cartItem || 0);
+  document.getElementById('cart-item').innerHTML = htmlCart;
+  cardMiniProduct();
 }

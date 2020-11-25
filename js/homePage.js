@@ -7,14 +7,10 @@ const component =
       <div class="product-m__thumb">
 
         <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail-variable.html?id={{id_1}}">
-
           <img class="aspect__img" src={{image}} alt=""></a>
-        <div class="product-m__quick-look">
-
-          <a class="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick Look"></a></div>
         <div class="product-m__add-cart">
 
-          <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Add to Cart</a>
+          <a class="btn--e-brand" onclick=addTocart('{{id_product}}')>Add to Cart</a>
         </div>
       </div>
       <div class="product-m__content">
@@ -72,8 +68,15 @@ function getListItem(page) {
     if (rawFile.status === 200) {
 
       const response = rawFile.response;
-
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchContent = urlParams.get('search');
       let listItem = JSON.parse(response);
+      if (searchContent) {
+        listItem = filterSearch(listItem, searchContent);
+      }
+      if (listItem.length == 0) {
+        window.location.href = '404.html';
+      }
       listItem = sortItem(listItem, filter.sortBy);
 
       let numPages = Math.floor(listItem.length / limit);
@@ -124,13 +127,14 @@ function renderByQuery(listItem) {
     html += component
       .replace('{{image}}', listItem[i].image_url)
       .replace('{{star}}', resStart)
-      .replace('{{countReviewer}}', Math.floor(listItem[i].final_price))
+      .replace('{{countReviewer}}', listItem[i].reviewer)
       .replace('{{products_name}}', listItem[i].products_name)
       .replace('{{final_price}}', "$" + listItem[i].final_price)
       .replace('{{categories_name}}', listItem[i].categories_name)
       .replace('{{description}}', description)
       .replace('{{id}}', listItem[i].products_model)
       .replace('{{id_1}}', listItem[i].products_model)
+      .replace('{{id_product}}', listItem[i].products_model)
   }
   return html;
 }
@@ -171,7 +175,7 @@ function randomShowItems() {
                       <div class="product-o__rating gl-rating-style">
                              {{star}}
 
-                          <span class="product-o__review">(0)</span></div>
+                          <span class="product-o__review">({{reviewer}})</span></div>
 
                       <span class="product-o__price">{{final_price}}
 
@@ -210,7 +214,8 @@ function randomShowItems() {
           .replace('{{products_name}}', productName)
           .replace('{{final_price}}', "$" + newItems[i].final_price)
           .replace('{{categories_name}}', listItem[i].categories_name)
-          .replace('{{pre_price}}', "$" + priceOld.fixed(2))
+          .replace('{{pre_price}}', "$" + newItems[i].pre_price)
+          .replace('{{reviewer}}', newItems[i].reviewer)
           .replace('{{id}}', newItems[i].products_model)
           .replace('{{id_1}}', newItems[i].products_model)
       }
@@ -221,3 +226,25 @@ function randomShowItems() {
   rawFile.send(null);
 }
 
+
+function search() {
+  //const params = document.getElementById("main-search").value;
+  let search = localStorage.getItem('search');
+  window.location.href = `shop-side-version-2.html?search=${search}`;
+}
+
+
+function filterSearch(data, search) {
+  console.log(search);
+  return data.filter(item =>
+    item.products_model.toLowerCase().includes(search)
+    || item.products_name.toLowerCase().includes(search)
+    || item.categories_name.toLowerCase().includes(search)
+  )
+}
+
+function saveInput() {
+  const params = document.getElementById("main-search").value;
+  localStorage.setItem('search', params);
+  console.log(params);
+}

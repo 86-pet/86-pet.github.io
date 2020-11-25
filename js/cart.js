@@ -39,7 +39,7 @@ function cartDetail() {
                       <td>
                           <div class="table-p__del-wrap">
 
-                              <a class="far fa-trash-alt table-p__delete-link" onclick=removeItems('{{products_model_1}}')></a></div>
+                              <a class="far fa-trash-alt table-p__delete-link" onclick=removeItemsCart('{{products_model_1}}')></a></div>
                       </td>
                     </tr>`;
 
@@ -66,7 +66,7 @@ function cartDetail() {
   }
 
   let amount = cart.map(item => item.quantity * item.price).reduce((a, b) => a + b) + 5 + 10; //TAX + SHIPPING
-  renderAmount = amountHtml.replace('{{total_amount}}', amount.toFixed(2));
+  renderAmount = amountHtml.replace('{{total_amount}}', '$' + amount.toFixed(2));
   document.getElementById('cart-detail').innerHTML = html;
   document.getElementById('total-amount').innerHTML = renderAmount;
   return html;
@@ -84,14 +84,31 @@ function changeQuantity(value, id) {
   window.location.reload();
 }
 
-function removeItems(id) {
+function removeItemsCart(id) {
   let cart = JSON.parse(localStorage.getItem('cart'));
   const result = cart.filter(item => item.products_model != id);
   localStorage.setItem('cart', JSON.stringify(result));
   loadCart();
+  cartDetail();
+  //window.location.reload();
 }
 
-function removeAllItem() {
+function removeAllItemCart() {
   localStorage.removeItem('cart');
+  cartDetail();
   loadCart();
+}
+
+function loadCart() {
+  let addCart = `<i class="fas fa-shopping-bag">
+                  </i>
+                  <span class="total-item-round">{{cart}}</span>`;
+  let cart = JSON.parse(localStorage.getItem('cart')) || [0];
+  if (cart && cart.length == 0) {
+    cart.push(0);
+  }
+  const cartItem = cart.map(item => +item.quantity).reduce((a, b) => a + b);
+  let htmlCart = addCart.replace('{{cart}}', cartItem || 0);
+  document.getElementById('cart-item').innerHTML = htmlCart;
+  // cardMiniProduct();
 }

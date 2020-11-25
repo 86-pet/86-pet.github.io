@@ -46,14 +46,16 @@
 
 
                         <!--====== Search Form ======-->
-                        <form class="main-form">
+                        <form class="main-form" onsubmit="return false">
 
                             <label for="main-search"></label>
 
                             <input class="input-text input-text--border-radius input-text--style-1" type="text"
-                                id="main-search" placeholder="Search">
+                                onkeydown="saveInput()" id="main-search" placeholder="Search"
+                                onkeypress="if(event.key === 'Enter') search()">
 
-                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+                            <button class="btn btn--icon fas fa-search main-search-button" type="button"
+                                onclick="search()"></button>
                         </form>
                         <!--====== End - Search Form ======-->
 

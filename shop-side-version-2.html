@@ -54,14 +54,16 @@
 
 
                         <!--====== Search Form ======-->
-                        <form class="main-form">
+                        <form class="main-form" onsubmit="return false">
 
                             <label for="main-search"></label>
 
                             <input class="input-text input-text--border-radius input-text--style-1" type="text"
-                                id="main-search" placeholder="Search">
+                                onkeydown="saveInput()" id="main-search" placeholder="Search"
+                                onkeypress="if(event.key === 'Enter') search()">
 
-                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+                            <button class="btn btn--icon fas fa-search main-search-button" type="button"
+                                onclick="search()"></button>
                         </form>
                         <!--====== End - Search Form ======-->
 
@@ -467,150 +469,16 @@
                                         <div class="mini-cart">
 
                                             <!--====== Mini Product Container ======-->
-                                            <div class="mini-product-container gl-scroll u-s-m-b-15">
-
-                                                <!--====== Card for mini cart ======-->
-                                                <div class="card-mini-product">
-                                                    <div class="mini-product">
-                                                        <div class="mini-product__image-wrapper">
-
-                                                            <a class="mini-product__link"
-                                                                href="product-detail-variable.html">
-
-                                                                <img class="u-img-fluid"
-                                                                    src="images/product/electronic/product3.jpg"
-                                                                    alt=""></a></div>
-                                                        <div class="mini-product__info-wrapper">
-
-                                                            <span class="mini-product__category">
-
-                                                                <a
-                                                                    href="shop-side-version-2.html">Electronics</a></span>
-
-                                                            <span class="mini-product__name">
-
-                                                                <a href="product-detail-variable.html">Yellow Wireless
-                                                                    Headphone</a></span>
-
-                                                            <span class="mini-product__quantity">1 x</span>
-
-                                                            <span class="mini-product__price">$8</span></div>
-                                                    </div>
-
-                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                                </div>
-                                                <!--====== End - Card for mini cart ======-->
-
-
-                                                <!--====== Card for mini cart ======-->
-                                                <div class="card-mini-product">
-                                                    <div class="mini-product">
-                                                        <div class="mini-product__image-wrapper">
-
-                                                            <a class="mini-product__link"
-                                                                href="product-detail-variable.html">
-
-                                                                <img class="u-img-fluid"
-                                                                    src="images/product/electronic/product18.jpg"
-                                                                    alt=""></a></div>
-                                                        <div class="mini-product__info-wrapper">
-
-                                                            <span class="mini-product__category">
-
-                                                                <a
-                                                                    href="shop-side-version-2.html">Electronics</a></span>
-
-                                                            <span class="mini-product__name">
-
-                                                                <a href="product-detail-variable.html">Nikon DSLR Camera
-                                                                    4k</a></span>
-
-                                                            <span class="mini-product__quantity">1 x</span>
-
-                                                            <span class="mini-product__price">$8</span></div>
-                                                    </div>
-
-                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                                </div>
-                                                <!--====== End - Card for mini cart ======-->
-
-
-                                                <!--====== Card for mini cart ======-->
-                                                <div class="card-mini-product">
-                                                    <div class="mini-product">
-                                                        <div class="mini-product__image-wrapper">
-
-                                                            <a class="mini-product__link"
-                                                                href="product-detail-variable.html">
-
-                                                                <img class="u-img-fluid"
-                                                                    src="images/product/women/product8.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="mini-product__info-wrapper">
-
-                                                            <span class="mini-product__category">
-
-                                                                <a href="shop-side-version-2.html">Women
-                                                                    Clothing</a></span>
-
-                                                            <span class="mini-product__name">
-
-                                                                <a href="product-detail-variable.html">New Dress D Nice
-                                                                    Elegant</a></span>
-
-                                                            <span class="mini-product__quantity">1 x</span>
-
-                                                            <span class="mini-product__price">$8</span></div>
-                                                    </div>
-
-                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                                </div>
-                                                <!--====== End - Card for mini cart ======-->
-
-
-                                                <!--====== Card for mini cart ======-->
-                                                <div class="card-mini-product">
-                                                    <div class="mini-product">
-                                                        <div class="mini-product__image-wrapper">
-
-                                                            <a class="mini-product__link"
-                                                                href="product-detail-variable.html">
-
-                                                                <img class="u-img-fluid"
-                                                                    src="images/product/men/product8.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="mini-product__info-wrapper">
-
-                                                            <span class="mini-product__category">
-
-                                                                <a href="shop-side-version-2.html">Men
-                                                                    Clothing</a></span>
-
-                                                            <span class="mini-product__name">
-
-                                                                <a href="product-detail-variable.html">New Fashion D
-                                                                    Nice
-                                                                    Elegant</a></span>
-
-                                                            <span class="mini-product__quantity">1 x</span>
-
-                                                            <span class="mini-product__price">$8</span></div>
-                                                    </div>
-
-                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                                </div>
-                                                <!--====== End - Card for mini cart ======-->
+                                            <div class="mini-product-container gl-scroll u-s-m-b-15"
+                                                id="card-mini-product-id">
                                             </div>
                                             <!--====== End - Mini Product Container ======-->
 
 
                                             <!--====== Mini Product Statistics ======-->
                                             <div class="mini-product-stat">
-                                                <div class="mini-total">
-
-                                                    <span class="subtotal-text">SUBTOTAL</span>
-
-                                                    <span class="subtotal-value">$16</span></div>
+                                                <div class="mini-total" id="cart-total-price-id">
+                                                </div>
                                                 <div class="mini-action">
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED
@@ -849,20 +717,6 @@
                         <div class="col-lg-9 col-md-12">
                             <div class="shop-p">
                                 <div class="shop-p__toolbar u-s-m-b-30">
-                                    <div class="shop-p__meta-wrap u-s-m-b-60">
-
-                                        <span class="shop-p__meta-text-1">FOUND 18 RESULTS</span>
-                                        <div class="shop-p__meta-text-2">
-
-                                            <span>Related Searches:</span>
-
-                                            <a class="gl-tag btn--e-brand-shadow" href="#">dog's clothing</a>
-
-                                            <a class="gl-tag btn--e-brand-shadow" href="#">food & toys </a>
-
-                                            <a class="gl-tag btn--e-brand-shadow" href="#">cat's beds</a>
-                                        </div>
-                                    </div>
                                     <div class="shop-p__tool-style">
                                         <div class="tool-style__group u-s-m-b-8">
 
@@ -1263,9 +1117,9 @@
                     <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <div class="success u-s-m-b-30">
-                                    <div class="success__text-wrap"><i class="fas fa-check"></i>
+                            <!-- <div class="col-lg-6 col-md-12">
+                                <div class="success u-s-m-b-30" id="modal-item-add-to-cart">
+                                    <!-- <div class="success__text-wrap"><i class="fas fa-check"></i>
 
                                         <span>Item is added successfully!</span></div>
                                     <div class="success__img-wrap">
@@ -1278,32 +1132,32 @@
 
                                         <span class="success__quantity">Quantity: 1</span>
 
-                                        <span class="success__price">$170.00</span></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                                <div class="s-option">
+                                        <span class="success__price">$170.00</span></div> -->
+                        </div>
+                    </div> -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="s-option">
 
-                                    <span class="s-option__text">1 item (s) in your cart</span>
-                                    <div class="s-option__link-box">
+                            <span class="s-option__text">1 item (s) in your cart</span>
+                            <div class="s-option__link-box">
 
-                                        <a class="s-option__link btn--e-white-brand-shadow"
-                                            data-dismiss="modal">CONTINUE SHOPPING</a>
+                                <a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">CONTINUE
+                                    SHOPPING</a>
 
-                                        <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">VIEW
-                                            CART</a>
+                                <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">VIEW
+                                    CART</a>
 
-                                        <a class="s-option__link btn--e-brand-shadow" href="checkout.html">PROCEED TO
-                                            CHECKOUT</a></div>
-                                </div>
-                            </div>
+                                <a class="s-option__link btn--e-brand-shadow" href="checkout.html">PROCEED TO
+                                    CHECKOUT</a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--====== End - Add to Cart Modal ======-->
-        <!--====== End - Modal Section ======-->
+    </div>
+    </div>
+    <!--====== End - Add to Cart Modal ======-->
+    <!--====== End - Modal Section ======-->
     </div>
     <!--====== End - Main App ======-->
 
