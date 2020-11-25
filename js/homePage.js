@@ -237,9 +237,9 @@ function search() {
 function filterSearch(data, search) {
   console.log(search);
   return data.filter(item =>
-    item.products_model.toLowerCase().includes(search)
-    || item.products_name.toLowerCase().includes(search)
-    || item.categories_name.toLowerCase().includes(search)
+    item.products_model.toLowerCase().includes(search.toLowerCase().trim())
+    || item.products_name.toLowerCase().includes(search.toLowerCase().trim())
+    || item.categories_name.toLowerCase().includes(search.toLowerCase().trim())
   )
 }
 
