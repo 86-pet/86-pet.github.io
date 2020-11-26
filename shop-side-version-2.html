@@ -528,69 +528,12 @@
                                                     data-toggle="collapse"></span>
                                             </div>
                                             <div class="shop-w__wrap collapse show" id="s-category">
-                                                <ul class="shop-w__category-list gl-scroll">
-                                                    <li class="has-list">
-
-                                                        <a href="#">DOG</a>
-
-                                                        <span class="category-list__text u-s-m-l-6">(23)</span>
-
-                                                        <span
-                                                            class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
-                                                        <ul style="display:block">
-                                                            <li>
-
-                                                                <a href="#">Clothing & bed</a>
-                                                            </li>
-                                                            <li>
-
-                                                                <a href="#">food</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="has-list">
-
-                                                        <a href="#">CAT</a>
-
-                                                        <span class="category-list__text u-s-m-l-6">(23)</span>
-
-                                                        <span
-                                                            class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
-                                                        <ul style="display:block">
-                                                            <li>
-
-                                                                <a href="#">Clothing</a>
-                                                            </li>
-                                                            <li>
-
-                                                                <a href="#">Items</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="has-list">
-
-                                                        <a href="#">OTHERS</a>
-
-                                                        <span class="category-list__text u-s-m-l-6">(23)</span>
-
-                                                        <span
-                                                            class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
-                                                        <ul style="display:block">
-                                                            <li>
-
-                                                                <a href="#">Health Care</a>
-                                                            </li>
-                                                            <li>
-
-                                                                <a href="#">Skin Care</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                                <ul class="shop-w__category-list gl-scroll" id="filter-categories">
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="u-s-m-b-30">
+                                    <!-- <div class="u-s-m-b-30">
                                         <div class="shop-w shop-w--style">
                                             <div class="shop-w__intro-wrap">
                                                 <h1 class="shop-w__h">RATING</h1>
@@ -677,7 +620,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="u-s-m-b-30">
                                         <div class="shop-w shop-w--style">
                                             <div class="shop-w__intro-wrap">
@@ -687,7 +630,7 @@
                                                     data-toggle="collapse"></span>
                                             </div>
                                             <div class="shop-w__wrap collapse show" id="s-price">
-                                                <form class="shop-w__form-p">
+                                                <form class="shop-w__form-p" onsubmit="return false">
                                                     <div class="shop-w__form-p-wrap">
                                                         <div>
 
@@ -705,7 +648,7 @@
 
                                                             <button
                                                                 class="btn btn--icon fas fa-angle-right btn--e-transparent-platinum-b-2"
-                                                                onclick="getListItem()" type="submit"></button></div>
+                                                                onclick="filterPrice()" type="submit"></button></div>
                                                     </div>
                                                 </form>
                                             </div>
@@ -1173,6 +1116,7 @@
         ga('send', 'pageview');
         getListItem();
         loadCart();
+        filterCategories();
     </script>
 
 

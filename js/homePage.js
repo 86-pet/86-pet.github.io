@@ -68,12 +68,28 @@ function getListItem(page) {
     if (rawFile.status === 200) {
 
       const response = rawFile.response;
-      const urlParams = new URLSearchParams(window.location.search);
-      const searchContent = urlParams.get('search');
       let listItem = JSON.parse(response);
+
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const searchContent = urlParams.get('search');
+      const priceFilter = urlParams.get('price');
+
+      let categoriesFilter = decodeURI(window.location.search);
+
+      if (categoriesFilter.includes('?categories=')) {
+        categoriesFilter = categoriesFilter.replace('?categories=', '');
+        listItem = filterCategoriesByURL(listItem, categoriesFilter);
+      }
+
       if (searchContent) {
         listItem = filterSearch(listItem, searchContent);
       }
+
+      if (priceFilter) {
+        listItem = filterPriceByURL(listItem, priceFilter);
+      }
+
       if (listItem.length == 0) {
         window.location.href = '404.html';
       }
@@ -235,7 +251,6 @@ function search() {
 
 
 function filterSearch(data, search) {
-  console.log(search);
   return data.filter(item =>
     item.products_model.toLowerCase().includes(search.toLowerCase().trim())
     || item.products_name.toLowerCase().includes(search.toLowerCase().trim())
@@ -243,8 +258,51 @@ function filterSearch(data, search) {
   )
 }
 
+function filterCategoriesByURL(data, search) {
+  return data.filter(item => item.categories_name.toLowerCase().includes(search.toLowerCase().trim())
+  )
+}
+
 function saveInput() {
   const params = document.getElementById("main-search").value;
   localStorage.setItem('search', params);
-  console.log(params);
+}
+
+function filterCategories() {
+  let component = `<li class="has-list">
+                      <a href="{{link}}">{{categories_name}}</a>
+                    </li>`;
+
+  const file = './data/example.json';
+  let rawFile = new XMLHttpRequest();
+  rawFile.open("GET", file, false);
+  rawFile.onreadystatechange = function () {
+
+    if (rawFile.status === 200) {
+      const response = rawFile.response;
+
+      let listItem = JSON.parse(response);
+      let categories = new Set(listItem.map(item => item.categories_name));
+      let categoriesValue = Array.from(categories.values());
+      let html = '';
+      for (let i = 0; i < 5; ++i) {
+        html += component.replace('{{link}}', `shop-side-version-2.html?categories=${categoriesValue[i]}`)
+          .replace('{{categories_name}}', categoriesValue[i])
+      }
+      document.getElementById("filter-categories").innerHTML = html;
+    }
+  }
+  rawFile.send(null);
+}
+
+function filterPrice() {
+  let priceMin = document.getElementById('price-min').value || 1;
+  let priceMax = document.getElementById('price-max').value || 9999;
+  return window.location.href = `shop-side-version-2.html?price=${priceMin}|${priceMax}`;
+}
+
+function filterPriceByURL(data, search) {
+  let price = search.split('|');
+  return data.filter(item =>
+    +item.final_price >= +price[0] && +item.final_price <= +price[1])
 }
