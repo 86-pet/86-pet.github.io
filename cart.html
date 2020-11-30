@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="images/favicon.png" rel="shortcut icon">
-    <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>    <script src="js/homePage.js"></script>
+    <title>86-pet</title>
+    <script src="js/homePage.js"></script>
 
     <!--====== Google Font ======-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -54,14 +55,16 @@
 
 
                         <!--====== Search Form ======-->
-                        <form class="main-form">
+                        <form class="main-form" onsubmit="return false">
 
                             <label for="main-search"></label>
 
                             <input class="input-text input-text--border-radius input-text--style-1" type="text"
-                                id="main-search" placeholder="Search">
+                                onkeydown="saveInput()" id="main-search" placeholder="Search"
+                                onkeypress="if(event.key === 'Enter') search()">
 
-                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+                            <button class="btn btn--icon fas fa-search main-search-button" type="button"
+                                onclick="search()"></button>
                         </form>
                         <!--====== End - Search Form ======-->
 
