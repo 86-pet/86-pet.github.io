@@ -7,8 +7,10 @@ function loadComponent(property) {
                   <img class="u-img-fluid" src="{{image_flush}}"
                       data-zoom-image="{{image_zoom}}" alt="">`;
   const description = `<p>{{description}}</p>`;
-
-  if (window.location.search == "") return window.location.href = "404.html";
+  /**
+   * NOTE :
+   */
+ // if (window.location.search == "") return window.location.href = "404.html";
 
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
@@ -22,8 +24,10 @@ function loadComponent(property) {
       let listItem = JSON.parse(response);
 
       const result = listItem.find(item => item.products_model == id);
-
-      if (!result) return window.location.href = "404.html";
+      /**
+       * NOTE :
+       */
+  //    if (!result) return window.location.href = "404.html";
 
       const html = productName.replace('{{product_name}}', result.products_name);
       const htmlPrice = price.replace('{{price}}', '$' + result.final_price);
