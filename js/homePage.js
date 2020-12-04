@@ -90,9 +90,10 @@ function getListItem(page) {
         listItem = filterPriceByURL(listItem, priceFilter);
       }
 
-      if (listItem.length == 0) {
-        window.location.href = '404.html';
-      }
+
+      //      if (listItem.length == 0) {
+      //      window.location.href = '404.html';
+      //  }
       listItem = sortItem(listItem, filter.sortBy);
 
       let numPages = Math.floor(listItem.length / limit);
