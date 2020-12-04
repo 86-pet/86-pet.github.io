@@ -1936,6 +1936,9 @@ input::-ms-clear {
   position: relative; }
 
 .header--style-1 {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   background-color: #2c3d5b; }
 
 .header--style-2 {
@@ -6000,12 +6003,16 @@ input::-ms-clear {
   display: none; }
 
 .s-skeleton {
+  padding-top: 161px;
   position: relative; }
   .s-skeleton--h-600 {
+    padding-top: 161px;
     min-height: 600px; }
   .s-skeleton--h-640 {
+    padding-top: 161px;
     min-height: 640px; }
   .s-skeleton--bg-grey {
+    padding-top: 161px;
     background-color: #f5f5f5; }
   .s-skeleton--bg-black {
     background-color: #000000; }
