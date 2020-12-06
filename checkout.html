@@ -23,6 +23,7 @@
     <!--====== App ======-->
     <link rel="stylesheet" href="css/app.css">
     <script src="js/product-detail-variable.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 
 <body class="config">
@@ -380,7 +381,8 @@
                                         <a href="https://pethealth.vn/category/blog/" target="_blank">PET TIPS</a></li>
                                     <li>
 
-                                        <a href="https://www.facebook.com/groups/hoitimkiemthucungthatlac/" target="_blank">FIND YOUR
+                                        <a href="https://www.facebook.com/groups/hoitimkiemthucungthatlac/"
+                                            target="_blank">FIND YOUR
                                             PET</a></li>
                                     <li>
 
@@ -393,118 +395,60 @@
                         <!--====== End - Dropdown Main plugin ======-->
 
 
-                        <!--====== Dropdown Main plugin ======-->
-                        <div class="menu-init" id="navigation3">
+                       <!--====== Dropdown Main plugin ======-->
+                       <div class="menu-init" id="navigation3">
 
-                            <button class="btn btn--icon toggle-button fas fa-shopping-bag toggle-button-shop"
-                                type="button"></button>
+                        <button class="btn btn--icon toggle-button fas fa-shopping-bag toggle-button-shop"
+                            type="button"></button>
 
-                            <span class="total-item-round">2</span>
+                        <span class="total-item-round">2</span>
 
-                            <!--====== Menu ======-->
-                            <div class="ah-lg-mode">
+                        <!--====== Menu ======-->
+                        <div class="ah-lg-mode">
 
-                                <span class="ah-close">✕ Close</span>
+                            <span class="ah-close">✕ Close</span>
 
-                                <!--====== List ======-->
-                                <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
-                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
-                                        title="Account">
+                            <!--====== List ======-->
+                            <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
 
-                                        <a><i class="far fa-user-circle"></i></a>
+                                <li class="has-dropdown">
 
-                                        <!--====== Dropdown ======-->
+                                    <a class="mini-cart-shop-link" id="cart-item"></a>
 
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:120px">
-                                            <li>
+                                    <!--====== Dropdown ======-->
 
-                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                    <span class="js-menu-toggle"></span>
+                                    <div class="mini-cart">
 
-                                                    <span>Account</span></a></li>
-                                            <li>
+                                        <!--====== Mini Product Container ======-->
+                                        <div class="mini-product-container gl-scroll u-s-m-b-15"
+                                            id="card-mini-product-id">
+                                        </div>
+                                        <!--====== End - Mini Product Container ======-->
 
-                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>Signup</span></a></li>
-                                            <li>
+                                        <!--====== Mini Product Statistics ======-->
+                                        <div class="mini-product-stat">
+                                            <div class="mini-total" id="cart-total-price-id">
+                                            </div>
+                                            <div class="mini-action">
 
-                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED
+                                                    TO CHECKOUT</a>
 
-                                                    <span>Signin</span></a></li>
-                                            <li>
-
-                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
-
-                                                    <span>Signout</span></a></li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
-                                        title="Settings">
-
-                                        <a><i class="fas fa-user-cog"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:120px">
-                                            <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                                <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                                <!--====== Dropdown ======-->
-
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:120px">
-                                                    <li>
-
-                                                        <a class="u-c-brand">ENGLISH</a></li>
-                                                    <li>
-
-                                                        <a>ARABIC</a></li>
-                                                    <li>
-
-                                                        <a>FRANCAIS</a></li>
-                                                    <li>
-
-                                                        <a>ESPANOL</a></li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
-                                            </li>
-                                            <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                                <a>Currency<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                                <!--====== Dropdown ======-->
-
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:120px">
-                                                    <li>
-
-                                                        <a class="u-c-brand">$ - US DOLLAR</a></li>
-                                                    <li>
-
-                                                        <a>£ - BRITISH POUND STERLING</a></li>
-                                                    <li>
-
-                                                        <a>€ - EURO</a></li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-
-                                    <li data-tooltip="tooltip" data-placement="left" title="Mail">
-
-                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
-                                </ul>
-                                <!--====== End - List ======-->
-                            </div>
-                            <!--====== End - Menu ======-->
+                                                <a class="mini-link btn--e-transparent-secondary-b-2"
+                                                    href="cart.html">VIEW CART</a></div>
+                                        </div>
+                                        <!--====== End - Mini Product Statistics ======-->
+                                    </div>
+                                    <!--====== End - Dropdown ======-->
+                                </li>
+                            </ul>
+                            <!--====== End - List ======-->
                         </div>
-                        <!--====== End - Dropdown Main plugin ======-->
+                        <!--====== End - Menu ======-->
+                    </div>
+                    <!--====== End - Dropdown Main plugin ======-->
                     </div>
                     <!--====== End - Secondary Nav ======-->
                 </div>
@@ -568,7 +512,7 @@
                                                             <label class="gl-label" for="login-email">E-MAIL *</label>
 
                                                             <input class="input-text input-text--primary-style"
-                                                                type="text" id="login-email" placeholder="Enter E-mail">
+                                                                type="email" id="login-email" placeholder="Enter E-mail">
                                                         </div>
                                                         <div class="u-s-m-b-15">
 
@@ -691,7 +635,7 @@
 
                                                 <label class="gl-label" for="billing-email">E-MAIL *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text"
+                                                <input class="input-text input-text--primary-style" type="email"
                                                     id="billing-email" data-bill=""></div>
                                             <!--====== End - E-MAIL ======-->
 
@@ -827,89 +771,7 @@
                                     <!--====== Order Summary ======-->
                                     <div class="o-summary">
                                         <div class="o-summary__section u-s-m-b-30">
-                                            <div class="o-summary__item-wrap gl-scroll">
-                                                <div class="o-card">
-                                                    <div class="o-card__flex">
-                                                        <div class="o-card__img-wrap">
-
-                                                            <img class="u-img-fluid"
-                                                                src="images/product/electronic/product3.jpg" alt="">
-                                                        </div>
-                                                        <div class="o-card__info-wrap">
-
-                                                            <span class="o-card__name">
-
-                                                                <a href="product-detail-variable.html">Yellow Wireless
-                                                                    Headphone</a></span>
-
-                                                            <span class="o-card__quantity">Quantity x 1</span>
-
-                                                            <span class="o-card__price">$150.00</span></div>
-                                                    </div>
-
-                                                    <a class="o-card__del far fa-trash-alt"></a>
-                                                </div>
-                                                <div class="o-card">
-                                                    <div class="o-card__flex">
-                                                        <div class="o-card__img-wrap">
-
-                                                            <img class="u-img-fluid"
-                                                                src="images/product/electronic/product18.jpg" alt="">
-                                                        </div>
-                                                        <div class="o-card__info-wrap">
-
-                                                            <span class="o-card__name">
-
-                                                                <a href="product-detail-variable.html">Nikon DSLR Camera
-                                                                    4k</a></span>
-
-                                                            <span class="o-card__quantity">Quantity x 1</span>
-
-                                                            <span class="o-card__price">$150.00</span></div>
-                                                    </div>
-
-                                                    <a class="o-card__del far fa-trash-alt"></a>
-                                                </div>
-                                                <div class="o-card">
-                                                    <div class="o-card__flex">
-                                                        <div class="o-card__img-wrap">
-
-                                                            <img class="u-img-fluid"
-                                                                src="images/product/women/product8.jpg" alt=""></div>
-                                                        <div class="o-card__info-wrap">
-
-                                                            <span class="o-card__name">
-
-                                                                <a href="product-detail-variable.html">New Dress D Nice
-                                                                    Elegant</a></span>
-
-                                                            <span class="o-card__quantity">Quantity x 1</span>
-
-                                                            <span class="o-card__price">$150.00</span></div>
-                                                    </div>
-
-                                                    <a class="o-card__del far fa-trash-alt"></a>
-                                                </div>
-                                                <div class="o-card">
-                                                    <div class="o-card__flex">
-                                                        <div class="o-card__img-wrap">
-
-                                                            <img class="u-img-fluid"
-                                                                src="images/product/men/product8.jpg" alt=""></div>
-                                                        <div class="o-card__info-wrap">
-
-                                                            <span class="o-card__name">
-
-                                                                <a href="product-detail-variable.html">New Fashion D
-                                                                    Nice Elegant</a></span>
-
-                                                            <span class="o-card__quantity">Quantity x 1</span>
-
-                                                            <span class="o-card__price">$150.00</span></div>
-                                                    </div>
-
-                                                    <a class="o-card__del far fa-trash-alt"></a>
-                                                </div>
+                                            <div class="o-summary__item-wrap gl-scroll" id="cart-checkout">
                                             </div>
                                         </div>
                                         <div class="o-summary__section u-s-m-b-30">
@@ -943,7 +805,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>SHIPPING</td>
-                                                            <td>$4.00</td>
+                                                            <td>$5.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>TAX</td>
@@ -951,11 +813,9 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SUBTOTAL</td>
-                                                            <td>$379.00</td>
+                                                            <td>$10.00</td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>GRAND TOTAL</td>
-                                                            <td>$379.00</td>
+                                                        <tr id="total-amount">
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1413,6 +1273,7 @@
         ga('create', 'UA-XXXXX-Y', 'auto');
         ga('send', 'pageview');
         loadCart();
+        cartCheckout();
     </script>
 
 
