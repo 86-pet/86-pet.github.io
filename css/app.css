@@ -929,7 +929,7 @@ body {
     border: 1px solid transparent;
     background-color: #f1f1f1; }
     .input-text--style-1:focus {
-      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 15px 0 rgb(255, 254, 254);
       background-color: transparent;
       border-color: #eee; }
   .input-text--style-2 {
@@ -2049,7 +2049,7 @@ input::-ms-clear {
   .outer-footer__content-title {
     display: block;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px; }
   .outer-footer__logo-wrap {
@@ -2061,7 +2061,7 @@ input::-ms-clear {
       font-size: 14px;
       color: #ffffff; }
     .outer-footer__text-wrap span {
-      font-size: 14px;
+      font-size: 18px;
       color: #ffffff; }
   .outer-footer__social ul {
     margin: 0;
@@ -2088,7 +2088,7 @@ input::-ms-clear {
       .outer-footer__list-wrap ul > li > a {
         transition: color 0.6s;
         color: #ffffff;
-        font-size: 14px; }
+        font-size: 18px; }
         .outer-footer__list-wrap ul > li > a:hover {
           color:  #0ac5a8 }
       .outer-footer__list-wrap ul > li:last-child {
