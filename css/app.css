@@ -66,7 +66,7 @@ custom-colors, box-mode, custom-header, custom-menu, custom-logo, featured-image
  */
 body {
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -243,7 +243,8 @@ Box Module
  */
 body {
   color: #7f7f7f;
-  font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px; }
 
 /*--------------------------------------------------------------
 3.0 Pre-configured styles
@@ -923,7 +924,7 @@ body {
       background-color: transparent;
       border-color:  #0ac5a8 }
   .input-text--style-1 {
-    color: #5c636c;
+    color: #ffffff;
     transition: all 0.6s linear;
     border: 1px solid transparent;
     background-color: #f1f1f1; }
