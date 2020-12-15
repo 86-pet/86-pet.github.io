@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <title>86-pet</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/homePage.js"></script>
+    <script src="js/product-detail-variable.js"></script>
+</head>
+
+<body class="config">
+    <div class="preloader is-active">
+        <div class="preloader__wrap">
+
+            <img class="preloader__img" src="images/preloader.png" alt=""></div>
+    </div>
+
+    <!--====== Main App ======-->
+    <div id="app">
+
+        <header class="header--style-1">
+
+            <!--====== Nav 1 ======-->
+            <nav class="primary-nav primary-nav-wrapper--border">
+                <div class="container">
+
+                    <!--====== Primary Nav ======-->
+                    <div class="primary-nav">
+
+                        <!--====== Main Logo ======-->
+
+                        <a class="main-logo" href="index.html">
+
+                            <img src="images/logo/logo-1.png" alt=""></a>
+                        <!--====== End - Main Logo ======-->
+
+
+                        <!--====== Search Form ======-->
+                        <form class="main-form" onsubmit="return false">
+
+                            <label for="main-search"></label>
+
+                            <input class="input-text input-text--border-radius input-text--style-1" type="text" onkeydown="saveInput()" id="main-search" placeholder="Search" onkeypress="if(event.key === 'Enter') search()">
+
+                            <button class="btn btn--icon fas fa-search main-search-button" type="button" onclick="search()"></button>
+                        </form>
+                        <!--====== End - Search Form ======-->
+
+
+                        <!--====== Dropdown Main plugin ======-->
+                        <div class="menu-init" id="navigation">
+
+                            <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-cogs" type="button"></button>
+
+                            <!--====== Menu ======-->
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="" data-original-title="Account">
+
+                                        <a><i class="far fa-user-circle"></i></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <ul style="width:120px">
+                                            <li>
+
+                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+
+                                                    <span>Account</span></a></li>
+                                            <li>
+
+                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+
+                                                    <span>Signup</span></a></li>
+                                            <li>
+
+                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+
+                                                    <span>Signin</span></a></li>
+                                            <li>
+
+                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+
+                                                    <span>Signout</span></a></li>
+                                        </ul>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="" data-original-title="Settings">
+
+                                        <a><i class="fas fa-user-cog"></i></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <ul style="width:120px">
+                                            <li class="has-dropdown has-dropdown--ul-right-100">
+
+                                                <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:120px">
+                                                    <li>
+
+                                                        <a class="u-c-brand">ENGLISH</a></li>
+                                                    <li>
+
+                                                        <a>VIETNAMESE</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                            <li class="has-dropdown has-dropdown--ul-right-100">
+
+                                                <a>Currency<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:120px">
+                                                    <li>
+
+                                                        <a class="u-c-brand">$ - US DOLLAR</a></li>
+                                                    <li>
+
+                                                        <a>VNĐ - VIET NAM DONG</a></li>
+                                                    <li>
+
+                                                        <a>€ - EURO</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                        </ul>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+
+                                    <li data-tooltip="tooltip" data-placement="left" title="" data-original-title="Mail">
+
+                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
+                                </ul>
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
+                    </div>
+                    <!--====== End - Primary Nav ======-->
+                </div>
+            </nav>
+            <!--====== End - Nav 1 ======-->
+
+
+            <!--====== Nav 2 ======-->
+            <nav class="secondary-nav-wrapper">
+                <div class="container">
+
+                    <!--====== Secondary Nav ======-->
+                    <div class="secondary-nav">
+
+                        <!--====== Dropdown Main plugin ======-->
+                        <div class="menu-init" id="navigation2">
+
+                            <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-cog" type="button"></button>
+
+                            <!--====== Menu ======-->
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">SHOPPING</a></li>
+                                    <li class="has-dropdown">
+
+                                        <a>PAGES<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <ul style="width:170px">
+                                            <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                <a>Home<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:118px">
+                                                    <li>
+
+                                                        <a href="index.html">Home</a></li>
+                                                    <li>
+
+                                                        <a href="index-2.html">Shopping&gt;</a></li><a href="index-2.html">
+                                                    </a><li><a href="index-2.html">
+
+                                                        </a><a href="index-3.html">Service</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                            <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                <a>Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:200px">
+                                                    <li>
+
+                                                        <a href="signin.html">Signin / Already Registered</a></li>
+                                                    <li>
+
+                                                        <a href="signup.html">Signup / Register</a></li>
+                                                    <li>
+
+                                                        <a href="lost-password.html">Lost Password</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                            <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                <a href="dashboard.html">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:200px">
+                                                    <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                        <a href="dashboard.html">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                        <!--====== Dropdown ======-->
+
+                                                        <span class="js-menu-toggle"></span>
+                                                        <ul style="width:180px">
+                                                            <li>
+
+                                                                <a href="dash-edit-profile.html">Edit Profile</a></li>
+                                                            <li>
+
+                                                                <a href="dash-address-book.html">Edit Address Book</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="dash-manage-order.html">Manage Order</a></li>
+                                                        </ul>
+                                                        <!--====== End - Dropdown ======-->
+                                                    </li>
+                                                    <li>
+
+                                                        <a href="dash-my-profile.html">My Profile</a></li>
+                                                    <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                        <a href="dash-address-book.html">Address Book<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                        <!--====== Dropdown ======-->
+
+                                                        <span class="js-menu-toggle"></span>
+                                                        <ul style="width:180px">
+                                                            <li>
+
+                                                                <a href="dash-address-make-default.html">Address Make
+                                                                    Default</a></li>
+                                                            <li>
+
+                                                                <a href="dash-address-add.html">Add New Address</a></li>
+                                                            <li>
+
+                                                                <a href="dash-address-edit.html">Edit Address Book</a>
+                                                            </li>
+                                                        </ul>
+                                                        <!--====== End - Dropdown ======-->
+                                                    </li>
+                                                    <li>
+
+                                                        <a href="dash-track-order.html">Track Order</a></li>
+                                                    <li>
+
+                                                        <a href="dash-my-order.html">My Orders</a></li>
+                                                    <li>
+
+                                                        <a href="dash-payment-option.html">My Payment Options</a></li>
+                                                    <li>
+
+                                                        <a href="dash-cancellation.html">My Returns &amp; Cancellations</a>
+                                                    </li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+
+                                            <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                <a>Product Details<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:200px">
+                                                    <li>
+
+                                                        <a href="product-detail-variable.html">Product Details</a></li>
+                                                    <li>
+
+                                                        <a href="product-detail-variable.html">Product Details
+                                                            Variable</a></li>
+                                                    <li>
+
+                                                        <a href="product-detail-affiliate.html">Product Details
+                                                            Affiliate</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                            <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                <a>Shop Grid Layout<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:200px">
+                                                    <li>
+
+                                                        <a href="shop-grid-left.html">Shop Grid Left Sidebar</a></li>
+                                                    <li>
+
+                                                        <a href="shop-grid-right.html">Shop Grid Right Sidebar</a></li>
+                                                    <li>
+
+                                                        <a href="shop-grid-full.html">Shop Grid Full Width</a></li>
+                                                    <li>
+
+                                                        <a href="shop-side-version-2.html">Shop Side Version 2</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                            <li class="has-dropdown has-dropdown--ul-left-100">
+
+                                                <a>Shop List Layout<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:200px">
+                                                    <li>
+
+                                                        <a href="shop-list-left.html">Shop List Left Sidebar</a></li>
+                                                    <li>
+
+                                                        <a href="shop-list-right.html">Shop List Right Sidebar</a></li>
+                                                    <li>
+
+                                                        <a href="shop-list-full.html">Shop List Full Width</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                            <li>
+
+                                                <a href="cart.html">Cart</a></li>
+                                            <li>
+
+                                                <a href="wishlist.html">Wishlist</a></li>
+                                            <li>
+
+                                                <a href="checkout.html">Checkout</a></li>
+                                            <li>
+
+                                                <a href="faq.html">FAQ</a></li>
+                                            <li>
+
+                                                <a href="about.html">About us</a></li>
+                                            <li>
+
+                                                <a href="contact.html">Contact</a></li>
+                                        </ul>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">SERVICE</a></li>
+                                    <li>
+
+                                        <a href="#" target="_blank">PET TIPS</a></li>
+                                    <li>
+
+                                        <a href="https://www.facebook.com/groups/hoitimkiemthucungthatlac/" target="_blank">FIND YOUR
+                                            PET</a></li>
+                                    <li>
+
+                                        <a href="about.html">OUR STORE</a></li>
+                                </ul>
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
+
+
+                        <!--====== Dropdown Main plugin ======-->
+                        <div class="menu-init" id="navigation3">
+
+                            <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-shopping-bag toggle-button-shop" type="button"></button>
+
+                            <span class="total-item-round">2</span>
+
+                            <!--====== Menu ======-->
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+
+                                    <li class="has-dropdown">
+
+                                        <a href="cart.html" class="mini-cart-shop-link" id="cart-item"><i class="fas fa-shopping-bag">
+                  </i>
+                  <span class="total-item-round">4</span></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <div class="mini-cart">
+
+                                            <!--====== Mini Product Container ======-->
+                                            <div class="mini-product-container gl-scroll u-s-m-b-15" id="card-mini-product-id"><div class="card-mini-product">
+                        <div class="mini-product">
+                            <div class="mini-product__image-wrapper">
+
+                                <a class="mini-product__link" href="product-detail-variable.html?id=SKUE23489">
+
+                                    <img class="u-img-fluid" src="https://imgaz1.chiccdn.com/thumb/view/oaupload/newchic/images/B1/1C/55d5878a-688d-4ca7-ae14-3a915a595746.jpeg" alt=""></a></div>
+                            <div class="mini-product__info-wrapper">
+
+                                <span class="mini-product__category">
+
+                                    <a href="shop-side-version-2.html">Cleaning &amp; Grooming &amp; Beauty</a></span>
+
+                                <span class="mini-product__name">
+
+                                    <a href="product-detail-variable.html">Yellow Wireless
+                                        Headphone</a></span>
+
+                                <span class="mini-product__quantity">4 x</span>
+
+                                <span class="mini-product__price">$18</span></div>
+                        </div>
+
+                        <a class="mini-product__delete-link far fa-trash-alt" onclick="removeItems('SKUE23489')"></a>
+                      </div></div>
+                                            <!--====== End - Mini Product Container ======-->
+
+
+                                            <!--====== Mini Product Statistics ======-->
+                                            <div class="mini-product-stat">
+                                                <div class="mini-total" id="cart-total-price-id"> <span class="subtotal-text">SUBTOTAL</span>
+
+                      <span class="subtotal-value">$72.00</span></div>
+                                                <div class="mini-action">
+
+                                                    <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED
+                                                        TO CHECKOUT</a>
+
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a></div>
+                                            </div>
+                                            <!--====== End - Mini Product Statistics ======-->
+                                        </div>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+                                </ul>
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
+                    </div>
+                    <!--====== End - Secondary Nav ======-->
+                </div>
+            </nav>
+            <!--====== End - Nav 2 ======-->
+        </header>
+        
+<!--====== End Main Header ======-->
+        <!--====== App Content ======-->
+        <div class="app-content">
+
+           
+            <!--====== End - Primary Slider ======-->
+
+
+        <!--====== App Content ======-->
+        <div class="app-content">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+            <!--====== Section 1 ======-->
+            <div class="u-s-p-y-60">
+                <div class="container">
+                    <div class="blog-m">
+                        <div class="row blog-m-init">
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail.html">
+
+                                            <img class="aspect__img" src="images/blog/post-2.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">Linghayquao</a></span></span>
+                                        
+
+                                        <span class="bp-mini__h1">
+
+                                            <a href="blog-detail.html">Deworming your dog and what you need to know</a></span>
+                                        <p class="bp-mini__p">Dog worm removal and worm prevention are very important. Just like humans, dogs are also prone to diseases caused by helminths.</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail3.html">
+
+                                            <img class="aspect__img" src="images/blog/post-5.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                            
+
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">batato.mm</a></span></span>
+
+                                            </div>
+                                       
+
+                                        <span class="bp-mini__h1">
+
+                                            <a href="blog-detail.html">Tips and warnings when breeding guinea</a></span>
+                                        <p class="bp-mini__p">Never bath your hamster with regular soap, as it can dry out your hamster's skin. Go to a pet store to buy hamster soap.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail2.html">
+
+                                            <img class="aspect__img" src="images/blog/post-12.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                            
+
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">Thaimeowmeow</a></span></span>
+
+                                            </div>
+                                        
+                                        <span class="bp-mini__h1">
+
+                                            <a href="blog-detail.html">How to care for cat</a></span>
+                                        <p class="bp-mini__p">With a mischievous nature, purring gestures and a cute face, cats are ideal animals for pets. </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                       <!--====== Image Code ======-->
+
+                                       <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="#">
+
+                                        <img class="aspect__img" src="images/blog/post-10.jpg" alt=""></a>
+                                    <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                           
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">Vymee</a></span></span>
+
+                                            </div>
+                                       
+
+                                        <span class="bp-mini__h1">
+
+                                            <a href="blog-detail.html">How to care for pregnant dogs at home need to know
+                                            </a></span>
+                                        <p class="bp-mini__p">Pregnant dog care at home is not easy. If you do not have the knowledge and careful preparation, the natural birth of a dog has a high risk of death.</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="#">
+
+                                            <img class="aspect__img" src="images/blog/post-4.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                            
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">Gin</a></span></span>
+
+                                            </div>
+                                       
+
+                                        <span class="bp-mini__h1">
+
+                                            <a href="#">How to make a pet gecko cage
+                                            </a></span>
+                                        <p class="bp-mini__p">We have raised the gecko in the form of a cage like after:
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="#">
+
+                                            <img class="aspect__img" src="images/blog/post-8.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                        
+
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">Dayle</a></span></span>
+
+                                           </div>
+                                        
+
+                                        <span class="bp-mini__h1">
+
+                                            <a href="blog-detail.html">Nutrition for pregnant dogs</a></span>
+                                        <p class="bp-mini__p">Medicines for pregnant dogs support health care for the mother dog. During pregnancy they need a lot of support and help from the breeder.</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="#">
+
+                                            <img class="aspect__img" src="images/blog/post-7.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                           
+
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">Dayle</a></span></span>
+
+                                            </div>
+                                        
+
+                                        <span class="bp-mini__h1">
+
+                                            <a href="blog-detail.html">Some points to note prevention and treatment of gecko farming </a></span>
+                                        <p class="bp-mini__p">Always clean the farming environment and clean drinking water, the area to place the barn discreetly away from passersby and noise.</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail.html">
+
+                                            <img class="aspect__img" src="images/blog/post-6.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                           
+
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">vanhanh</a></span></span>
+
+                                           </div>
+                                        
+                                        <span class="bp-mini__h1">
+
+                                            <a href="#">FAQs direct questions about deworming for dogs</a></span>
+                                        <p class="bp-mini__p">What does dog worming do when my dog has no worms?</p>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-m__element">
+                                <div class="bp-mini bp-mini--img">
+                                    <div class="bp-mini__thumbnail">
+
+                                        <!--====== Image Code ======-->
+
+                                        <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="#">
+
+                                            <img class="aspect__img" src="images/blog/post-9.jpg" alt=""></a>
+                                        <!--====== End - Image Code ======-->
+                                    </div>
+                                    <div class="bp-mini__content">
+                                        <div class="bp-mini__stat">
+
+                                            
+
+                                            <span class="bp-mini__stat-wrap">
+
+                                                <span class="bp-mini__preposition">By</span>
+
+                                                <span class="bp-mini__author">
+
+                                                    <a href="#">phucmytang</a></span></span>
+
+                                            </div>
+                                        
+                                        <span class="bp-mini__h1">
+
+                                            <a href="#"> Sterilization for cats</a></span>
+                                        <p class="bp-mini__p">The female cat sterilization and neutering male cats bring many benefits. You'll reduce the annoying behavior of cats like wandering away and spray urine.</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <nav class="post-center-wrap u-s-p-y-60">
+
+                        <!--====== Pagination ======-->
+                        <ul class="blog-pg">
+                            <li class="blog-pg--active">
+
+                                <a href="blog-masonry.html">1</a></li>
+                            <li>
+
+                                <a href="blog-masonry.html">2</a></li>
+                            <li>
+
+                                <a href="blog-masonry.html">3</a></li>
+                            <li>
+
+                                <a href="blog-masonry.html">4</a></li>
+                            <li>
+
+                                <a class="fas fa-angle-right" href="blog-masonry.html"></a></li>
+                        </ul>
+                        <!--====== End - Pagination ======-->
+                    </nav>
+                </div>
+            </div>
+            <!--====== End - Section 1 ======-->
+        </div>
+        <!--====== End - App Content ======-->
+
+
+     
+            <!--====== Main Footer ======-->
+            <footer>
+                <div class="outer-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-6">
+                                <div class="outer-footer__content u-s-m-b-40">
+
+                                    <span class="outer-footer__content-title">Contact Us</span>
+                                    <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
+
+                                        <span>UEL</span></div>
+                                    <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
+
+                                        <span>(+0) 123456789 </span></div>
+                                    <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
+
+                                        <span>contact@domain.com</span></div>
+                                    <div class="outer-footer__social">
+                                        <ul>
+                                            <li>
+
+                                                <a class="s-fb--color-hover" href="#"><i
+                                                        class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+
+                                                <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+
+                                                <a class="s-youtube--color-hover" href="#"><i
+                                                        class="fab fa-youtube"></i></a></li>
+                                            <li>
+
+                                                <a class="s-insta--color-hover" href="#"><i
+                                                        class="fab fa-instagram"></i></a></li>
+                                            <li>
+
+                                                <a class="s-gplus--color-hover" href="#"><i
+                                                        class="fab fa-google-plus-g"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-6">
+                                        <div class="outer-footer__content u-s-m-b-40">
+
+                                            <span class="outer-footer__content-title">Information</span>
+                                            <div class="outer-footer__list-wrap">
+                                                <ul>
+                                                    <li>
+
+                                                        <a href="cart.html">Cart</a></li>
+                                                    <li>
+
+                                                        <a href="dashboard.html">Account</a></li>
+                                                    <li>Manufacturer</li>
+                                                    <li>Finance</li>
+                                                    <li>Shop</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="outer-footer__content u-s-m-b-40">
+                                            <div class="outer-footer__list-wrap">
+
+                                                <span class="outer-footer__content-title">Our Company</span>
+                                                <ul>
+                                                    <li>
+
+                                                        <a href="about.html">About us</a></li>
+                                                    <li>Contact Us</li>
+                                                    <li>Delivery</li>
+                                                    <li>
+
+                                                        <a href="shop-side-version-2.html">Store</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="lower-footer__content">
+                                    <div class="lower-footer__copyright">
+
+                                        <span>Copyright © 2020</span>
+
+                                        <a href="index.html">86 pet</a>
+
+                                        <span>All Right Reserved</span></div>
+                                    <div class="lower-footer__payment">
+                                        <ul>
+                                            <li><i class="fab fa-cc-stripe"></i></li>
+                                            <li><i class="fab fa-cc-paypal"></i></li>
+                                            <li><i class="fab fa-cc-mastercard"></i></li>
+                                            <li><i class="fab fa-cc-visa"></i></li>
+                                            <li><i class="fab fa-cc-discover"></i></li>
+                                            <li><i class="fab fa-cc-amex"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    <!--====== End - Main App ======-->
+
+
+    <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+    <script>
+        window.ga = function() {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+    <!--====== Vendor Js ======-->
+    <script src="js/vendor.js"></script>
+
+    <!--====== jQuery Shopnav plugin ======-->
+    <script src="js/jquery.shopnav.js"></script>
+
+    <!--====== App ======-->
+    <script src="js/app.js"></script>
+
+    <!--====== Noscript ======-->
+    <noscript>
+        <div class="app-setting">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="app-setting__wrap">
+                            <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+
+                            <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a JavaScript-capable browser.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </noscript>
+</body>
+</html>
