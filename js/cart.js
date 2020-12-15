@@ -112,3 +112,56 @@ function loadCart() {
   document.getElementById('cart-item').innerHTML = htmlCart;
   // cardMiniProduct();
 }
+
+function processCheckout() {
+  window.location.href = "checkout.html";
+}
+
+
+
+function cartCheckout() {
+  const component = `<div class="o-card">
+                      <div class="o-card__flex">
+                          <div class="o-card__img-wrap">
+
+                              <img class="u-img-fluid"
+                                  src="{{image}}"></div>
+                          <div class="o-card__info-wrap">
+
+                              <span class="o-card__name">
+
+                                  <a href="#">{{product_name}}</a></span>
+
+                              <span class="o-card__quantity">Quantity x {{quantity}}</span>
+
+                              <span class="o-card__price">{{price}}</span></div>
+                      </div>
+                    </div>`;
+
+  const amountHtml = `<td>GRAND TOTAL</td><td >{{total_amount}}</td>`;
+  let renderAmount = ``;
+  let html = '';
+  let cart = JSON.parse(localStorage.getItem('cart'));
+
+  if (!cart || !cart.length) {
+    document.getElementById('cart-checkout').innerHTML = '';
+    document.getElementById('total-amount').innerHTML = '';
+    return;
+  }
+
+  for (let item of cart) {
+    html += component
+      .replace('{{product_name}}', item.products_name)
+      .replace('{{image}}', item.image)
+      .replace('{{categories_name}}', item.categories_name)
+      .replace('{{price}}', '$' + (item.price * item.quantity).toFixed(2))
+      .replace('{{quantity}}', item.quantity)
+  }
+
+  let amount = cart.map(item => item.quantity * item.price).reduce((a, b) => a + b) + 5 + 10; //TAX + SHIPPING
+  renderAmount = amountHtml.replace('{{total_amount}}', '$' + amount.toFixed(2));
+  document.getElementById('cart-checkout').innerHTML = html;
+  document.getElementById('total-amount').innerHTML = renderAmount;
+
+  return html;
+}
