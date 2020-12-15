@@ -7,10 +7,13 @@ function loadComponent(property) {
                   <img class="u-img-fluid" src="{{image_flush}}"
                       data-zoom-image="{{image_zoom}}" alt="">`;
   const description = `<p>{{description}}</p>`;
+  const star = '<i class="fas fa-star"></i>';
+  const start0 = '<i class="far fa-star"></i>';
+
   /**
    * NOTE :
    */
- // if (window.location.search == "") return window.location.href = "404.html";
+  // if (window.location.search == "") return window.location.href = "404.html";
 
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
@@ -27,7 +30,13 @@ function loadComponent(property) {
       /**
        * NOTE :
        */
-  //    if (!result) return window.location.href = "404.html";
+      //    if (!result) return window.location.href = "404.html";
+
+      let resStart = '';
+      for (let index = 0; index < 5; index++) {
+        console.log(result);
+        resStart += index < result.rate ? star : start0;
+      }
 
       const html = productName.replace('{{product_name}}', result.products_name);
       const htmlPrice = price.replace('{{price}}', '$' + result.final_price);
@@ -44,6 +53,7 @@ function loadComponent(property) {
       document.getElementById('image').innerHTML = htmlImage;
       document.getElementById('pd-o-initiate').innerHTML = htmlImage1;
       document.getElementById('description').innerHTML = htmlDescription;
+      document.getElementById('product-star').innerHTML = resStart;
     }
   }
   rawFile.send(null);
