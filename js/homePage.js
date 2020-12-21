@@ -104,8 +104,8 @@ function getListItem(page) {
       btn_prev.style.visibility = currentPage == 1 ? "hidden" : "visible";
 
       btn_next.style.visibility = currentPage == numPages ? "hidden" : "visible";
+      listItem = listItem.slice(currentPage > 1 ? limit * currentPage : 1, (limit * currentPage) + +limit);
 
-      listItem = listItem.slice(limit * currentPage, (limit * currentPage) + +limit);
       const html = renderByQuery(listItem);
       document.getElementById("get-list-item").innerHTML = html;
     }
