@@ -90,14 +90,11 @@ function getListItem(page) {
         listItem = filterPriceByURL(listItem, priceFilter);
       }
 
-
       //      if (listItem.length == 0) {
       //      window.location.href = '404.html';
       //  }
       listItem = sortItem(listItem, filter.sortBy);
-
       let numPages = Math.floor(listItem.length / limit);
-
       if (currentPage < 1) currentPage = 1;
       if (currentPage > numPages) currentPage = numPages;
 
@@ -109,7 +106,6 @@ function getListItem(page) {
       btn_next.style.visibility = currentPage == numPages ? "hidden" : "visible";
 
       listItem = listItem.slice(limit * currentPage, (limit * currentPage) + +limit);
-
       const html = renderByQuery(listItem);
       document.getElementById("get-list-item").innerHTML = html;
     }
@@ -125,7 +121,7 @@ function sortItem(list, filter) {
       return list.sort((a, b) => b.final_price - a.final_price);
     case 'rating':
     default:
-      return list.filter(item => item.rate > RATE);
+      return list.filter(item => item.rate > 1);
   }
 }
 
@@ -140,7 +136,7 @@ function renderByQuery(listItem) {
       resStart += index < listItem[i].rate ? star : start0;
     }
 
-    let description = listItem[i].description.substr(0, 150) + '...';
+    let description = listItem[i] && listItem[i].description && listItem[i].description.length > 0 ? listItem[i].description.substr(0, 150) + '...': '..';
     html += component
       .replace('{{image}}', listItem[i].image_url)
       .replace('{{star}}', resStart)
