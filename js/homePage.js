@@ -121,7 +121,7 @@ function sortItem(list, filter) {
       return list.sort((a, b) => b.final_price - a.final_price);
     case 'rating':
     default:
-      return list.filter(item => item.rate > 1);
+      return list.filter(item => item.rate > 3);
   }
 }
 
