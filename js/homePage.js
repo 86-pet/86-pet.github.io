@@ -46,7 +46,7 @@ function getListItem(page) {
   let filter = {};
   const file = './data/example.json';
 
-  const limit = document.getElementById("select-limit-item").value || 20;
+  const limit = document.getElementById("select-limit-item").value || 20; // null thì limit = 20 or limit==value
   const sortBy = document.getElementById("select-sort-item").value;
 
   const priceMin = document.getElementById("price-min").value;

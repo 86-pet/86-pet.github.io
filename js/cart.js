@@ -90,7 +90,6 @@ function removeItemsCart(id) {
   localStorage.setItem('cart', JSON.stringify(result));
   loadCart();
   cartDetail();
-  //window.location.reload();
 }
 
 function removeAllItemCart() {
